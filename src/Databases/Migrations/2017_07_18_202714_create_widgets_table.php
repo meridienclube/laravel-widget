@@ -46,7 +46,6 @@ class CreateWidgetsTable extends Migration
         Schema::create('widgetgables', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('widget_id');
-            $table->unsignedBigInteger('user_id');
             $table->morphs('widgetgable');
             $table->json('options')->nullable();
             $table->integer('order')->default(1);
@@ -57,10 +56,6 @@ class CreateWidgetsTable extends Migration
                 ->on('widgets')
                 ->onDelete('cascade');
 
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
         });
 
     }

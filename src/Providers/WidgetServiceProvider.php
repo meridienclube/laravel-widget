@@ -15,7 +15,8 @@ class WidgetServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../Views', 'widget');
         //$this->loadTranslationsFrom(__DIR__ . '/../Translations', 'widget');
-        $this->loadMigrationsFrom(__DIR__.'/../Databases/Migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../Databases/Migrations');
+        
         Blade::component('widget::components.widget', 'widget');
         Blade::component('widget::components.widgets', 'widgets');
     }
