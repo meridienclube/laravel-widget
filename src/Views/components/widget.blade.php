@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="kt-portlet__body">
-            @includeIf($widget->view, $widget->data)
+            @includeIf($widget->view . '::widget', $widget->data)
         </div>
     </div>
 </div>

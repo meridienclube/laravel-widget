@@ -16,4 +16,8 @@ class Widget extends Model
         'slug',
         'description'
     ];
+
+    protected $casts = [
+        'widgets.pivot.options' => 'array',
+    ];
 }

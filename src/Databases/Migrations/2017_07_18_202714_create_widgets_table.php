@@ -43,6 +43,26 @@ class CreateWidgetsTable extends Migration
             $table->primary(['option_id', 'widget_id']);
         });
 
+        Schema::create('widgetgables', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('widget_id');
+            $table->unsignedBigInteger('user_id');
+            $table->morphs('widgetgable');
+            $table->json('options')->nullable();
+            $table->integer('order')->default(1);
+            $table->timestamps();
+
+            $table->foreign('widget_id')
+                ->references('id')
+                ->on('widgets')
+                ->onDelete('cascade');
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+        });
+
     }
 
     /**
@@ -52,7 +72,7 @@ class CreateWidgetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('option_widget_values');
+        Schema::dropIfExists('widgetgables');
         Schema::dropIfExists('option_widget');
         Schema::dropIfExists('widgets');
     }
