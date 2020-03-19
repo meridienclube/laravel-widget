@@ -1,5 +1,5 @@
 {
-  "name": "confrariaweb/laravel-widget",
+  "name": "meridienclube/laravel-widget",
   "version": "dev-master",
   "description": "Pacote de widgets para Laravel",
   "keywords": [
@@ -16,8 +16,8 @@
     }
   ],
   "require": {
-    "confrariaweb/laravel-user": "dev-master",
-    "confrariaweb/laravel-vendor": "dev-master"
+    "meridienclube/laravel-user": "dev-master",
+    "meridienclube/laravel-vendor": "dev-master"
   },
   "autoload": {
     "psr-4": {
